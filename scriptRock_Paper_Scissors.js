@@ -1,7 +1,6 @@
 function playGame() {
     function getComputerChoice() {
         let value = Math.random();
-        console.log(value);
         if (value >= 0 && value <= 0.3) { // Rock will come out more often because it includes results >0 and <=0.1
             return "rock";
         } else if (value >= 0.3 && value <= 0.6) { // used 0.3 again (and 0.6 again on the next line) to take into account the numbers between 0.3 and 0.4 (and 0.6 and 0.7)
@@ -47,4 +46,4 @@ playGame();
 }
 while ((humanScore + computerScore) < 5); 
 
-console.log(`The game is over! Here is the final score: you ${humanScore}; computer ${computerScore}`);
+console.log(`The game is over! Here is the final score: you = ${humanScore}; computer = ${computerScore}`);
