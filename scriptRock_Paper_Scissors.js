@@ -41,6 +41,3 @@ function playRound(computerChoice, humanChoice) {
 }
 
 console.log(playRound(computerSelection, humanSelection));
-
-
-//For some reason, you keep having "it's a tie" returned even if getHumanChoice and getComputerCHoice return different values.
