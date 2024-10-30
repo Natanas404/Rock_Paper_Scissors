@@ -19,25 +19,27 @@ function getHumanChoice() {
 
 let humanScore = 0;
 let computerScore = 0;
-console.log(humanScore, computerScore);
 
 const computerSelection = getComputerChoice();
 const humanSelection = getHumanChoice();
 
-function playRound(computerChoice, humanChoice) {
-    if (humanChoice === computerChoice) {
-        return "How unlucky, it's a tie! Try again.";
-    } else if (humanChoice === "rock" && computerChoice === "scissors"
-        || humanChoice === "scissors" && computerChoice === "paper"
-        || humanChoice === "paper" && computerChoice === "rock") {
-        return "You've won! Try again if you dare.";
-    } else if (computerChoice === "rock" && humanChoice === "scissors"
-        || computerChoice === "scissors" && humanChoice === "paper"
-        || computerChoice === "paper" && humanChoice === "rock") {
-        return "You've lost. Try again to get your revenge!";
-    } else {
-        return "You might have spelt that wrong. Try again, please.";
+function playGame() {
+    function playRound(computerChoice, humanChoice) {
+        if (humanChoice === computerChoice) {
+            return `How unlucky, it's a tie! Try again. The score is: you = ${humanScore}; computer = ${computerScore}`;
+        } else if (humanChoice === "rock" && computerChoice === "scissors"
+            || humanChoice === "scissors" && computerChoice === "paper"
+            || humanChoice === "paper" && computerChoice === "rock") {
+            return `You've won! Try again if you dare. The score is now:  you = ${++humanScore}; computer = ${computerScore}`;
+        } else if (computerChoice === "rock" && humanChoice === "scissors"
+            || computerChoice === "scissors" && humanChoice === "paper"
+            || computerChoice === "paper" && humanChoice === "rock") {
+            return `You've lost. Try again to get your revenge! The score is now: you = ${humanScore}, computer = ${++computerScore}`;
+        } else {
+            return "You might have spelt that wrong. Try again, please.";
+        }
     }
+    console.log(playRound(computerSelection, humanSelection));
 }
 
-console.log(playRound(computerSelection, humanSelection));
+console.log(playGame())
